@@ -1,0 +1,29 @@
+syntax = "proto3";
+package messaging;
+
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+// messages
+
+message MusicDescription {
+    google.protobuf.Duration duration = 1;
+
+    message SceneDescription {
+    google.protobuf.Timestamp startTime = 1;
+    string mood = 2;
+    }
+
+    repeated SceneDescription scenes = 2;
+    string videoFileName = 3;
+    bool sendingSourceAudioFile = 4;
+}
+
+message FileChunk {
+    bytes Content = 1;
+}
+
+service MusicService {
+    rpc GetGeneratedMusic(MusicDescription) returns (stream FileChunk) {}
+}

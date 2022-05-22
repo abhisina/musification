@@ -1,0 +1,18 @@
+// Customizations
+
+/* make the customizations */
+/*
+$theme-colors: (
+    "info": tomato,
+    "danger": teal
+);
+*/
+// Override default variables before the import
+// $body-bg: #000;
+
+.box-height-100 {
+    min-height: 100vh;
+}
+
+// Must be last line
+@import "~bootstrap/scss/bootstrap";

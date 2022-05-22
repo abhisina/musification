@@ -1,0 +1,9 @@
+// TODO: Use bootstrap variables for color
+// Move this to index.scss if required
+
+.banner-box {
+    background: url(../images/topPianoDark.jpg) no-repeat fixed bottom;
+    background-size: cover;
+    position: relative;
+    color: azure;
+}
